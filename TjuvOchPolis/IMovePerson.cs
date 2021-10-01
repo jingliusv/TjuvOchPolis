@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TjuvOchPolis
 {
-    public interface IMove
+    public interface IMovePerson
     {
-        void IMove();
+        void DrawPerson(string output);
+        void Move();
+        void CheckPosition();
     }
 }

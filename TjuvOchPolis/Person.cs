@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace TjuvOchPolis
 {
-    class Person : IMove
+    class Person : IMovePerson
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -32,7 +32,6 @@ namespace TjuvOchPolis
                 this.Y = stan.Height;
             else if (Y == stan.Height)
                 this.Y = 0;
-  
         }
 
         public void DrawPerson(string output)
@@ -45,9 +44,8 @@ namespace TjuvOchPolis
             }
         }
 
-        public void IMove()
+        public void Move()
         {
-
             switch (Inriktning)
             {
                 case Direction.Höger:
@@ -100,7 +98,6 @@ namespace TjuvOchPolis
             Random rnd = new Random();
             return rnd.Next(0, stan.Height);
         }
-
 
     }
 }

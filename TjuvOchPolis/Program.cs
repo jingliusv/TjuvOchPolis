@@ -10,27 +10,28 @@ namespace TjuvOchPolis
     {
         static void Main(string[] args)
         {
-            List<Tjuv> TList = SkapaPersonList.SkapaTjuvList(3); ;
-            List<Medborgare> MList = SkapaPersonList.SkapaMedborgareList(20);
-            
+            List<Tjuv> TList = SkapaPersonList.SkapaTjuvList(1); ;
+            List<Medborgare> MList = SkapaPersonList.SkapaMedborgareList(15);
+
+
             do
             {
                 RitaStan();
                 foreach (var tjuv in TList)
-                {               
+                {
                     tjuv.DrawPerson("T");
                     tjuv.CheckPosition();
-                    tjuv.IMove();                   
+                    tjuv.Move();
                 }
 
-                foreach(var medborgare in MList)
+                foreach (var medborgare in MList)
                 {
                     medborgare.DrawPerson("M");
                     medborgare.CheckPosition();
-                    medborgare.IMove();
+                    medborgare.Move();
                 }
 
-                
+
             } while (true);
 
 
