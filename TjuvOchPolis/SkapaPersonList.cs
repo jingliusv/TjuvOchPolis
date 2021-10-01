@@ -21,6 +21,18 @@ namespace TjuvOchPolis
             return TjuvList;
         }
 
-        
+        public static List<Medborgare> SkapaMedborgareList(int num)
+        {
+            List<Medborgare> MedborgareList = new List<Medborgare>();
+
+            for (int i = 0; i < num; i++)
+            {
+                MedborgareList.Add(new Medborgare());
+                Thread.Sleep(200);
+            }
+            return MedborgareList;
+        }
+
+
     }
 }
