@@ -23,29 +23,14 @@ namespace TjuvOchPolis
 
         public void CheckPosition()
         {
-            if(X <= 0)
+            if(X == 0)
                 this.X = stan.Width;
-
-            if(X >= stan.Width)
+            else if(X == stan.Width)
                 this.X = 0;
-
-            if(Y <= 0)
+            else if(Y == 0)
                 this.Y = stan.Height;
-
-            if (Y >= stan.Height)
+            else if (Y == stan.Height)
                 this.Y = 0;
-
-            if (X <= 0 && Y <= 0)
-            {
-                this.X = stan.Width;
-                this.Y = stan.Height;
-            }
-
-            if (X >= stan.Width && Y >= stan.Height)
-            {
-                this.X = 0;
-                this.Y = 0;
-            }
    
         }
 
@@ -84,24 +69,10 @@ namespace TjuvOchPolis
                     Y--;
                     break;
             }
-            //if(X < 0)
-            //{
-            //    X = stan.Width;
-            //    PersonPositionHistoria.Add(new Position(X, Y));
-            //}
-            //else if(Y < 0)
-            //{
-            //    Y = stan.Height;
-            //    PersonPositionHistoria.Add(new Position(X, Y));
-            //}          
-            //else
-            //{
-                PersonPositionHistoria.Add(new Position(X, Y));
-            //}
-
+           
+            PersonPositionHistoria.Add(new Position(X, Y));
             PersonPositionHistoria.RemoveAt(0);
             Thread.Sleep(50);
-
         }
 
         

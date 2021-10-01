@@ -11,7 +11,7 @@ namespace TjuvOchPolis
         static void Main(string[] args)
         {
             List<Tjuv> TList = new List<Tjuv>();
-            TList = SkapaPersonList.SkapaTjuvList(1);
+            TList = SkapaPersonList.SkapaTjuvList(3);
 
 
             do
