@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TjuvOchPolis
@@ -10,35 +11,45 @@ namespace TjuvOchPolis
     {
         static void Main(string[] args)
         {
-            List<Tjuv> TList = SkapaPersonList.SkapaTjuvList(1); ;
-            List<Medborgare> MList = SkapaPersonList.SkapaMedborgareList(15);
-
-
+            List<Tjuv> TList = SkapaPersonList.SkapaTjuvList(3); 
+            List<Medborgare> MList = SkapaPersonList.SkapaMedborgareList(10);
+            
             do
             {
-                RitaStan();
+                DrawCity();
+
                 foreach (var tjuv in TList)
-                {
-                    tjuv.DrawPerson("T");
-                    tjuv.CheckPosition();
-                    tjuv.Move();
-                }
+                    tjuv.MoveAndShowPerson("T");
 
                 foreach (var medborgare in MList)
-                {
-                    medborgare.DrawPerson("M");
-                    medborgare.CheckPosition();
-                    medborgare.Move();
-                }
+                    medborgare.MoveAndShowPerson("M");
 
+                GameLogic.CheckTjuvMeborgareMeet(TList, MList);
+
+                ShowResultMessage();
 
             } while (true);
 
-
-            Console.ReadLine();
         }
 
-        private static void RitaStan()
+        
+
+        private static void ShowResultMessage()
+        {
+            int antalRanade = GameLogic.NumberOfRobbed;
+            if(antalRanade > 0)
+            {
+                Console.SetCursorPosition(0, 22);
+                string message = $"Antal rånade medborgare: {antalRanade}";
+                for (int i = 0; i < message.Length; i++)
+                    Console.Write("-");
+                Console.WriteLine();
+                Console.WriteLine(message);
+                Thread.Sleep(2000);
+            }
+        }
+
+        private static void DrawCity()
         {
             Console.Clear();
             Stan stan = new Stan();

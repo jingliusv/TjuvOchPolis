@@ -7,7 +7,7 @@
 
         public Stan()
         {
-            Width = 30;
+            Width = 100;
             Height = 20;
         }
     }

@@ -8,7 +8,7 @@ namespace TjuvOchPolis
 {
     class Medborgare : Person
     {
-        List<Inventory> Tillhorigheter = new List<Inventory>();
+        public List<Inventory> Tillhorigheter = new List<Inventory>();
 
         public Medborgare()
         {

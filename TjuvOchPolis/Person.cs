@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace TjuvOchPolis
 {
-    class Person : IMovePerson
+    class Person 
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -12,31 +12,39 @@ namespace TjuvOchPolis
 
         Stan stan = new Stan();
         
-        List<Position> PersonPositionHistoria = new List<Position>();
+        List<Position> PersonPositionHistory = new List<Position>();
 
         public Person()
         {           
             this.X = GenerateRandomX(stan);
             this.Y = GenerateRandomY(stan);
             this.Inriktning = GetRandomDirection();           
-            PersonPositionHistoria.Add(new Position(X, Y));           
+            PersonPositionHistory.Add(new Position(X, Y));           
         }
 
-        public void CheckPosition()
+        public void MoveAndShowPerson(string symbol)
+        {
+            DrawPerson(symbol);
+            CheckPosition();
+            Move();
+        }
+
+        private void CheckPosition()
         {
             if(X == 0)
                 this.X = stan.Width;
             else if(X == stan.Width)
                 this.X = 0;
-            else if(Y == 0)
+            
+            if(Y == 0)
                 this.Y = stan.Height;
             else if (Y == stan.Height)
                 this.Y = 0;
         }
 
-        public void DrawPerson(string output)
+        private void DrawPerson(string output)
         {
-            foreach (Position pos in PersonPositionHistoria)
+            foreach (Position pos in PersonPositionHistory)
             {
                 Console.SetCursorPosition(pos.X, pos.Y);
                 Console.Write(output);
@@ -44,7 +52,7 @@ namespace TjuvOchPolis
             }
         }
 
-        public void Move()
+        private void Move()
         {
             switch (Inriktning)
             {
@@ -70,8 +78,8 @@ namespace TjuvOchPolis
                     break;
             }
            
-            PersonPositionHistoria.Add(new Position(X, Y));
-            PersonPositionHistoria.RemoveAt(0);
+            PersonPositionHistory.Add(new Position(X, Y));
+            PersonPositionHistory.RemoveAt(0);
             Thread.Sleep(50);
         }
 
@@ -99,5 +107,6 @@ namespace TjuvOchPolis
             return rnd.Next(0, stan.Height);
         }
 
+ 
     }
 }

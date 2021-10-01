@@ -5,8 +5,7 @@ namespace TjuvOchPolis
 {
     class Tjuv : Person
     {
-        List<Inventory> Stoldgods = new List<Inventory>();
-
-       
+        public List<Inventory> Stoldgods = new List<Inventory>();
+   
     }
 }
