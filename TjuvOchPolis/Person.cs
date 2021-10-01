@@ -13,12 +13,13 @@ namespace TjuvOchPolis
         Stan stan = new Stan();
         
         List<Position> PersonPositionHistoria = new List<Position>();
+
         public Person()
         {           
             this.X = GenerateRandomX(stan);
             this.Y = GenerateRandomY(stan);
             this.Inriktning = GetRandomDirection();           
-            PersonPositionHistoria.Add(new Position(X, Y));
+            PersonPositionHistoria.Add(new Position(X, Y));           
         }
 
         public void CheckPosition()
@@ -31,7 +32,7 @@ namespace TjuvOchPolis
                 this.Y = stan.Height;
             else if (Y == stan.Height)
                 this.Y = 0;
-   
+  
         }
 
         public void DrawPerson(string output)
@@ -40,6 +41,7 @@ namespace TjuvOchPolis
             {
                 Console.SetCursorPosition(pos.X, pos.Y);
                 Console.Write(output);
+                Console.CursorVisible = false;
             }
         }
 

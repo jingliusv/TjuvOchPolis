@@ -13,7 +13,6 @@ namespace TjuvOchPolis
             List<Tjuv> TList = new List<Tjuv>();
             TList = SkapaPersonList.SkapaTjuvList(3);
 
-
             do
             {
                 RitaStan();
@@ -21,8 +20,7 @@ namespace TjuvOchPolis
                 {               
                     tjuv.DrawPerson("T");
                     tjuv.CheckPosition();
-                    tjuv.IMove();
-                    
+                    tjuv.IMove();                   
                 }
             } while (true);
 

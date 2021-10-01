@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Enums.cs" />
     <Compile Include="IMove.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="SkapaPersonList.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Position.cs" />
