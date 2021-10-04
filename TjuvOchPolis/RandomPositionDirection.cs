@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TjuvOchPolis
 {
-    class GetRandomPositionDirection
+    class RandomPositionDirection
     {
         public static Direction GetRandomDirection()
         {

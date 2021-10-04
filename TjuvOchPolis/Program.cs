@@ -13,9 +13,9 @@ namespace TjuvOchPolis
         static void Main(string[] args)
         {
             StanModel stan = new StanModel();
-            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(5); 
-            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(15);
-            List<PolisModel> PList = CreatePersonList.SkapaPolisList(4);
+            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(4); 
+            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(12);
+            List<PolisModel> PList = CreatePersonList.SkapaPolisList(5);
 
             do
             {
@@ -31,6 +31,7 @@ namespace TjuvOchPolis
                     MovePerson.MoveAndShowPerson("P", polis, stan);
 
                 GameLogic.CheckTjuvMeborgareMeet(TList, MList);
+                GameLogic.CheckTjuvPolisMeet(TList, PList);
 
                 ShowResultMessage();
 
@@ -43,16 +44,23 @@ namespace TjuvOchPolis
         private static void ShowResultMessage()
         {
             int numRobbed = GameLogic.NumberOfRobbed;
-            if(numRobbed > 0)
+            int numGetCaught = GameLogic.NumberOfThiefGetCaught;
+            if(numRobbed > 0 || numGetCaught > 0)
             {
                 Console.SetCursorPosition(0, 22);
-                string message = $"Antal rånade medborgare: {numRobbed}";
-                for (int i = 0; i < message.Length; i++)
-                    Console.Write("-");
-                Console.WriteLine();
+                string message = $"Antal rånade medborgare: {numRobbed} Antal gripna tjuvar: {numGetCaught}";
+                PrintLine(message.Length);              
                 Console.WriteLine(message);
                 Thread.Sleep(2000);
             }
+           
+        }
+
+        private static void PrintLine(int lineLength)
+        {
+            for (int i = 0; i < lineLength; i++)
+                Console.Write("-");
+            Console.WriteLine();
         }
 
         private static void DrawCity(StanModel stan)

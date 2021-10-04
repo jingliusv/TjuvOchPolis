@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Enums.cs" />
     <Compile Include="GameLogic.cs" />
-    <Compile Include="GetRandomPositionDirection.cs" />
+    <Compile Include="RandomPositionDirection.cs" />
     <Compile Include="Models\InventoryModel.cs" />
     <Compile Include="Models\MedborgareModel.cs" />
     <Compile Include="Models\PolisModel.cs" />
