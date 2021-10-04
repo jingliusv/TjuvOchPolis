@@ -1,11 +1,11 @@
 ﻿namespace TjuvOchPolis
 {
-    class Position
+    class PositionModel
     {
         public int X { get; set; }
         public int Y { get; set; }
 
-        public Position(int x, int y)
+        public PositionModel(int x, int y)
         {
             this.X = x;
             this.Y = y;

@@ -11,18 +11,19 @@ namespace TjuvOchPolis
     {
         static void Main(string[] args)
         {
-            List<Tjuv> TList = SkapaPersonList.SkapaTjuvList(3); 
-            List<Medborgare> MList = SkapaPersonList.SkapaMedborgareList(10);
+            StanModel stan = new StanModel();
+            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(4); 
+            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(10);
             
             do
             {
-                DrawCity();
+                DrawCity(stan);
 
                 foreach (var tjuv in TList)
-                    tjuv.MoveAndShowPerson("T");
+                    MovePerson.MoveAndShowPerson("T", tjuv, stan);
 
                 foreach (var medborgare in MList)
-                    medborgare.MoveAndShowPerson("M");
+                    MovePerson.MoveAndShowPerson("M", medborgare, stan);
 
                 GameLogic.CheckTjuvMeborgareMeet(TList, MList);
 
@@ -49,10 +50,10 @@ namespace TjuvOchPolis
             }
         }
 
-        private static void DrawCity()
+        private static void DrawCity(StanModel stan)
         {
             Console.Clear();
-            Stan stan = new Stan();
+
             // Topp sida
             for (int i = 0; i < stan.Width; i++)
             {

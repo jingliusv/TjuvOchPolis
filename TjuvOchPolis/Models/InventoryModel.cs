@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TjuvOchPolis
 {
-    class Inventory
+    class InventoryModel
     {
         public string ItemName { get; set; }
 

@@ -1,11 +1,11 @@
 ﻿namespace TjuvOchPolis
 {
-    class Stan
+    class StanModel
     {
         public int Width { get; set; }
         public int Height { get; set; }
 
-        public Stan()
+        public StanModel()
         {
             Width = 100;
             Height = 20;

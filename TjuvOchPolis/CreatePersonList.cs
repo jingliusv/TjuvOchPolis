@@ -7,31 +7,33 @@ using System.Threading.Tasks;
 
 namespace TjuvOchPolis
 {
-    class SkapaPersonList
+    class CreatePersonList
     {
-        public static List<Tjuv> SkapaTjuvList(int num)
+        public static List<TjuvModel> SkapaTjuvList(int num)
         {
-            List<Tjuv> TjuvList = new List<Tjuv>();
+            List<TjuvModel> TjuvList = new List<TjuvModel>();
 
             for (int i = 0; i < num; i++)
             {
-                TjuvList.Add(new Tjuv());
+                TjuvList.Add(new TjuvModel());
                 Thread.Sleep(200);
             }
             return TjuvList;
         }
 
-        public static List<Medborgare> SkapaMedborgareList(int num)
+        public static List<MedborgareModel> SkapaMedborgareList(int num)
         {
-            List<Medborgare> MedborgareList = new List<Medborgare>();
+            List<MedborgareModel> MedborgareList = new List<MedborgareModel>();
 
             for (int i = 0; i < num; i++)
             {
-                MedborgareList.Add(new Medborgare());
+                MedborgareList.Add(new MedborgareModel());
                 Thread.Sleep(200);
             }
             return MedborgareList;
         }
+
+       
 
 
     }
