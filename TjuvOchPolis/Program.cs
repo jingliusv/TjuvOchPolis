@@ -14,7 +14,7 @@ namespace TjuvOchPolis
         {
             StanModel stan = new StanModel();
             List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(5); 
-            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(20);
+            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(15);
             List<PolisModel> PList = CreatePersonList.SkapaPolisList(4);
 
             do
