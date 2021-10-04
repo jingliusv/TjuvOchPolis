@@ -48,6 +48,7 @@
     <Compile Include="GetRandomPositionDirection.cs" />
     <Compile Include="Models\InventoryModel.cs" />
     <Compile Include="Models\MedborgareModel.cs" />
+    <Compile Include="Models\PolisModel.cs" />
     <Compile Include="MovePerson.cs" />
     <Compile Include="CreatePersonList.cs" />
     <Compile Include="Models\PersonModel.cs" />

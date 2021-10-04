@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using TjuvOchPolis.Models;
 using System.Threading.Tasks;
 
 namespace TjuvOchPolis
@@ -12,9 +13,10 @@ namespace TjuvOchPolis
         static void Main(string[] args)
         {
             StanModel stan = new StanModel();
-            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(4); 
-            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(10);
-            
+            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(5); 
+            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(20);
+            List<PolisModel> PList = CreatePersonList.SkapaPolisList(4);
+
             do
             {
                 DrawCity(stan);
@@ -24,6 +26,9 @@ namespace TjuvOchPolis
 
                 foreach (var medborgare in MList)
                     MovePerson.MoveAndShowPerson("M", medborgare, stan);
+
+                foreach (var polis in PList)
+                    MovePerson.MoveAndShowPerson("P", polis, stan);
 
                 GameLogic.CheckTjuvMeborgareMeet(TList, MList);
 
@@ -37,11 +42,11 @@ namespace TjuvOchPolis
 
         private static void ShowResultMessage()
         {
-            int antalRanade = GameLogic.NumberOfRobbed;
-            if(antalRanade > 0)
+            int numRobbed = GameLogic.NumberOfRobbed;
+            if(numRobbed > 0)
             {
                 Console.SetCursorPosition(0, 22);
-                string message = $"Antal rånade medborgare: {antalRanade}";
+                string message = $"Antal rånade medborgare: {numRobbed}";
                 for (int i = 0; i < message.Length; i++)
                     Console.Write("-");
                 Console.WriteLine();

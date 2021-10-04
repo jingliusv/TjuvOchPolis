@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TjuvOchPolis.Models;
 
 namespace TjuvOchPolis
 {
@@ -33,7 +34,18 @@ namespace TjuvOchPolis
             return MedborgareList;
         }
 
-       
+
+        public static List<PolisModel> SkapaPolisList(int num)
+        {
+            List<PolisModel> PolisList = new List<PolisModel>();
+            for (int i = 0; i < num; i++)
+            {
+                PolisList.Add(new PolisModel());
+                Thread.Sleep(200);
+            }
+
+            return PolisList;
+        }
 
 
     }
