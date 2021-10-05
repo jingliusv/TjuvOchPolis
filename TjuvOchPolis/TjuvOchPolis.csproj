@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleUI.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="GameLogic.cs" />
     <Compile Include="RandomPositionDirection.cs" />

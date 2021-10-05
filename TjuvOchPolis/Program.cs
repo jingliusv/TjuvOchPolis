@@ -12,93 +12,40 @@ namespace TjuvOchPolis
     {
         static void Main(string[] args)
         {
-            StadModel stan = new StadModel();
-            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(20); 
-            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(30);
-            List<PolisModel> PList = CreatePersonList.SkapaPolisList(10);
+            StadModel stad = new StadModel();
+
+            ConsoleUI.WelcomeInfo();
+            int numThieves = "Hur många tjuvar vill du skapa: ".RequestIntAnswer();
+            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(numThieves);
+            
+            int numCitizen = "Hur många medborgare vill du skapa: ".RequestIntAnswer();
+            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(numCitizen);
+
+            int numPolice = "Hur många polis vill du skapa: ".RequestIntAnswer();
+            List<PolisModel> PList = CreatePersonList.SkapaPolisList(numPolice);
+            Console.Clear();
 
             do
             {
-                DrawCity(stan);
+                ConsoleUI.DrawCity(stad);
 
                 foreach (var tjuv in TList)
-                    MovePerson.MoveAndShowPerson("T", tjuv, stan);
+                    MovePerson.MoveAndShowPerson("T", tjuv, stad);
 
                 foreach (var medborgare in MList)
-                    MovePerson.MoveAndShowPerson("M", medborgare, stan);
+                    MovePerson.MoveAndShowPerson("M", medborgare, stad);
 
                 foreach (var polis in PList)
-                    MovePerson.MoveAndShowPerson("P", polis, stan);
+                    MovePerson.MoveAndShowPerson("P", polis, stad);
 
                 GameLogic.CheckTjuvMeborgareMeet(TList, MList);
                 GameLogic.CheckTjuvPolisMeet(TList, PList);
 
-                ShowResultMessage();
+                ConsoleUI.ShowResultMessage();
 
             } while (true);
 
         }
-
-        public static void ShowMessage(string message)
-        {
-            Console.SetCursorPosition(0, 22);
-            Console.WriteLine(message);
-        }
-
-        private static void ShowResultMessage()
-        {
-            int numRobbed = GameLogic.NumberOfRobbed;
-            int numGetCaught = GameLogic.NumberOfThiefGetCaught;
-            if(numRobbed > 0 || numGetCaught > 0)
-            {
-                Console.SetCursorPosition(0, 22);
-                string message = $"Antal rånade medborgare: {numRobbed} Antal gripna tjuvar: {numGetCaught}";
-                PrintLine(message.Length);              
-                Console.WriteLine(message);
-                Thread.Sleep(2000);
-            }
-           
-        }
-
-        private static void PrintLine(int lineLength)
-        {
-            for (int i = 0; i < lineLength; i++)
-                Console.Write("-");
-            Console.WriteLine();
-        }
-
-        private static void DrawCity(StadModel stan)
-        {
-            Console.Clear();
-
-            // Topp sida
-            for (int i = 0; i < stan.Width; i++)
-            {
-                Console.SetCursorPosition(i, 0);
-                Console.Write("-");
-            }
-
-            // Bottom sida
-            for (int i = 0; i < stan.Width; i++)
-            {
-                Console.SetCursorPosition(i, stan.Height);
-                Console.Write("-");
-            }
-
-            // Vänster sida
-            for (int i = 0; i < stan.Height; i++)
-            {
-                Console.SetCursorPosition(0, i);
-                Console.Write("|");
-            }
-
-            // Höger sida
-            for (int i = 0; i < stan.Height; i++)
-            {
-                Console.SetCursorPosition(stan.Width, i);
-                Console.Write("|");
-            }
-            Console.WriteLine("\n\n");
-        }
+   
     }
 }

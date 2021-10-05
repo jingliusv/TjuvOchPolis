@@ -8,7 +8,7 @@
         public StadModel()
         {
             Width = 100;
-            Height = 20;
+            Height = 25;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace TjuvOchPolis
                         {
                             StealRandomThing(m, t);
                             NumberOfRobbed++;
-                            Program.ShowMessage("Tjuvar rånar medborgare.");
+                            ConsoleUI.ShowStatusMessage("Tjuvar rånar medborgare.");
                             Thread.Sleep(2000);
                         }
                                               
@@ -47,7 +47,7 @@ namespace TjuvOchPolis
                         {
                             TakeStolenThing(p, t);
                             NumberOfThiefGetCaught++;
-                            Program.ShowMessage("Polis tar tjuv.");
+                            ConsoleUI.ShowStatusMessage("Polis tar tjuv.");
                             Thread.Sleep(2000);
                         }
     
