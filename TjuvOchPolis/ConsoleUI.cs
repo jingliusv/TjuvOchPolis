@@ -66,28 +66,28 @@ namespace TjuvOchPolis
             Console.Clear();
 
             // Topp sida
-            for (int i = 0; i < stan.Width; i++)
+            for (int i = 1; i < stan.Width; i++)
             {
                 Console.SetCursorPosition(i, 0);
                 Console.Write("-");
             }
 
             // Bottom sida
-            for (int i = 0; i < stan.Width; i++)
+            for (int i = 1; i < stan.Width; i++)
             {
                 Console.SetCursorPosition(i, stan.Height);
                 Console.Write("-");
             }
 
             // Vänster sida
-            for (int i = 0; i < stan.Height; i++)
+            for (int i = 1; i < stan.Height; i++)
             {
                 Console.SetCursorPosition(0, i);
                 Console.Write("|");
             }
 
             // Höger sida
-            for (int i = 0; i < stan.Height; i++)
+            for (int i = 1; i < stan.Height; i++)
             {
                 Console.SetCursorPosition(stan.Width, i);
                 Console.Write("|");

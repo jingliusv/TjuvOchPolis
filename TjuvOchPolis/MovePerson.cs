@@ -59,15 +59,15 @@ namespace TjuvOchPolis
 
         private static void CheckPosition(PersonModel person, StadModel stan)
         {
-            if (person.X == 0)
-                person.X = stan.Width;
-            else if (person.X == stan.Width)
-                person.X = 0;
+            if (person.X == 1)
+                person.X = stan.Width - 1;
+            else if (person.X == stan.Width - 1)
+                person.X = 1;
 
-            if (person.Y == 0)
-                person.Y = stan.Height;
-            else if (person.Y == stan.Height)
-                person.Y = 0;
+            if (person.Y == 1)
+                person.Y = stan.Height - 1;
+            else if (person.Y == stan.Height - 1)
+                person.Y = 1;
         }
 
     }
