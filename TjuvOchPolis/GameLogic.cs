@@ -70,9 +70,9 @@ namespace TjuvOchPolis
         {         
             Random rnd = new Random();
             int index = rnd.Next(0, medborgare.Tillhorigheter.Count - 1);
-            string stolenGods = medborgare.Tillhorigheter[index].ItemName;
+            string stolenGoods = medborgare.Tillhorigheter[index].ItemName;
             medborgare.Tillhorigheter.RemoveAt(index);
-            tjuv.Stoldgods.Add(new InventoryModel { ItemName = stolenGods });            
+            tjuv.Stoldgods.Add(new InventoryModel { ItemName = stolenGoods });            
         }
     }
 }
