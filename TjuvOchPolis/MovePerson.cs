@@ -9,7 +9,7 @@ namespace TjuvOchPolis
 {
     class MovePerson
     {
-        public static void MoveAndShowPerson(string symbol, PersonModel person, StanModel stan)
+        public static void MoveAndShowPerson(string symbol, PersonModel person, StadModel stan)
         {
             DrawPerson(symbol, person);
             CheckPosition(person,stan);
@@ -57,7 +57,7 @@ namespace TjuvOchPolis
             Thread.Sleep(50);
         }
 
-        private static void CheckPosition(PersonModel person, StanModel stan)
+        private static void CheckPosition(PersonModel person, StadModel stan)
         {
             if (person.X == 0)
                 person.X = stan.Width;

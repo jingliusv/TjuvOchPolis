@@ -55,7 +55,7 @@
     <Compile Include="Models\PositionModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\StanModel.cs" />
+    <Compile Include="Models\StadModel.cs" />
     <Compile Include="Models\TjuvModel.cs" />
   </ItemGroup>
   <ItemGroup>

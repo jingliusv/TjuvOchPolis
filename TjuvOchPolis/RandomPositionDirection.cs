@@ -8,9 +8,9 @@ namespace TjuvOchPolis
 {
     class RandomPositionDirection
     {
+        public static Random rnd = new Random();
         public static Direction GetRandomDirection()
-        {
-            Random rnd = new Random();
+        {           
             Type type = typeof(Direction);
             Array values = type.GetEnumValues();
             int index = rnd.Next(0, Enum.GetNames(typeof(Direction)).Length);
@@ -18,16 +18,14 @@ namespace TjuvOchPolis
             return value;
         }
 
-        public static int GenerateRandomX(StanModel stan)
+        public static int GenerateRandomX(StadModel stad)
         {
-            Random rnd = new Random();
-            return rnd.Next(0, stan.Width);
+            return rnd.Next(1, stad.Width);
         }
 
-        public static int GenerateRandomY(StanModel stan)
+        public static int GenerateRandomY(StadModel stan)
         {
-            Random rnd = new Random();
-            return rnd.Next(0, stan.Height);
+            return rnd.Next(1, stan.Height);
         }
     }
 }

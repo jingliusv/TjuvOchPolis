@@ -15,7 +15,7 @@ namespace TjuvOchPolis
 
         public PersonModel()
         {
-            StanModel stan = new StanModel();
+            StadModel stan = new StadModel();
             this.X = RandomPositionDirection.GenerateRandomX(stan);
             this.Y = RandomPositionDirection.GenerateRandomY(stan);
             this.Inriktning = RandomPositionDirection.GetRandomDirection();           

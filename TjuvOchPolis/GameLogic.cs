@@ -25,10 +25,10 @@ namespace TjuvOchPolis
                         {
                             StealRandomThing(m, t);
                             NumberOfRobbed++;
+                            Program.ShowMessage("Tjuvar rånar medborgare.");
+                            Thread.Sleep(2000);
                         }
-                        
-                        //Console.WriteLine("En medborgare har blivit rånade");
-                        Thread.Sleep(2000);
+                                              
                     }
                 }
             }
@@ -47,11 +47,10 @@ namespace TjuvOchPolis
                         {
                             TakeStolenThing(p, t);
                             NumberOfThiefGetCaught++;
+                            Program.ShowMessage("Polis tar tjuv.");
+                            Thread.Sleep(2000);
                         }
-                            
-
-                        
-                        Thread.Sleep(2000);
+    
                     }
                 }
             }

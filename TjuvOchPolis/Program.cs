@@ -12,10 +12,10 @@ namespace TjuvOchPolis
     {
         static void Main(string[] args)
         {
-            StanModel stan = new StanModel();
-            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(4); 
-            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(12);
-            List<PolisModel> PList = CreatePersonList.SkapaPolisList(5);
+            StadModel stan = new StadModel();
+            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(20); 
+            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(30);
+            List<PolisModel> PList = CreatePersonList.SkapaPolisList(10);
 
             do
             {
@@ -39,7 +39,11 @@ namespace TjuvOchPolis
 
         }
 
-        
+        public static void ShowMessage(string message)
+        {
+            Console.SetCursorPosition(0, 22);
+            Console.WriteLine(message);
+        }
 
         private static void ShowResultMessage()
         {
@@ -63,7 +67,7 @@ namespace TjuvOchPolis
             Console.WriteLine();
         }
 
-        private static void DrawCity(StanModel stan)
+        private static void DrawCity(StadModel stan)
         {
             Console.Clear();
 
