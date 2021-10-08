@@ -16,13 +16,13 @@ namespace TjuvOchPolis
 
             ConsoleUI.WelcomeInfo();
             int numThieves = "Hur många tjuvar vill du skapa: ".RequestIntAnswer();
-            List<TjuvModel> TList = CreatePersonList.SkapaTjuvList(numThieves);
+            List<TjuvModel> TList = CreatePersonList<TjuvModel>.SkapaPersonList(numThieves);
             
             int numCitizen = "Hur många medborgare vill du skapa: ".RequestIntAnswer();
-            List<MedborgareModel> MList = CreatePersonList.SkapaMedborgareList(numCitizen);
+            List<MedborgareModel> MList = CreatePersonList<MedborgareModel>.SkapaPersonList(numCitizen);
 
             int numPolice = "Hur många polis vill du skapa: ".RequestIntAnswer();
-            List<PolisModel> PList = CreatePersonList.SkapaPolisList(numPolice);
+            List<PolisModel> PList = CreatePersonList<PolisModel>.SkapaPersonList(numPolice);
             Console.Clear();
 
             do

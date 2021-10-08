@@ -8,43 +8,18 @@ using TjuvOchPolis.Models;
 
 namespace TjuvOchPolis
 {
-    class CreatePersonList
+    class CreatePersonList<T> where T : PersonModel, new()
     {
-        public static List<TjuvModel> SkapaTjuvList(int num)
+        public static List<T> SkapaPersonList(int num)
         {
-            List<TjuvModel> TjuvList = new List<TjuvModel>();
+            List<T> personList = new List<T>();
 
             for (int i = 0; i < num; i++)
             {
-                TjuvList.Add(new TjuvModel());
+                personList.Add(new T());
                 Thread.Sleep(200);
             }
-            return TjuvList;
-        }
-
-        public static List<MedborgareModel> SkapaMedborgareList(int num)
-        {
-            List<MedborgareModel> MedborgareList = new List<MedborgareModel>();
-
-            for (int i = 0; i < num; i++)
-            {
-                MedborgareList.Add(new MedborgareModel());
-                Thread.Sleep(200);
-            }
-            return MedborgareList;
-        }
-
-
-        public static List<PolisModel> SkapaPolisList(int num)
-        {
-            List<PolisModel> PolisList = new List<PolisModel>();
-            for (int i = 0; i < num; i++)
-            {
-                PolisList.Add(new PolisModel());
-                Thread.Sleep(200);
-            }
-
-            return PolisList;
+            return personList;
         }
 
 
